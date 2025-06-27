@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(to top,#14213d,#fca311);
+}
+header{
+    width:80%;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
