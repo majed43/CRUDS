@@ -17,3 +17,68 @@ header{
     justify-content: center;
     text-align: center;
 }
+main{
+    width:80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.full{
+    width: 100%;
+}
+.deviceInfo,#total,#createButton{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.priceInputs{
+    display: flex;
+}
+.price{
+    width: 100%;
+}
+.priceInputs>div{
+    width: 19.4%;
+    margin-right: 5px;
+}
+#total{
+    background-color: red;
+    color:#f4d58d;
+
+    &::before{
+        content: 'Total:';
+    }
+    &::after{
+        content: '$';
+    }
+}
+#createButton{
+    background-color: #8ac926;
+    transition: all 0.4s ease ;
+    height: 40px;
+    &:hover{
+        letter-spacing: 5px;
+        background-color: rgb(0, 255, 0);
+    }
+}
+.inputWrap{
+    position: relative;
+}
+#focus {
+    position: absolute;
+    top:-7px;
+    left: 1px;
+    font-size:17px;
+    background-color: rgb(255, 255, 255);
+    height: 20px;
+    width: 75px;
+    padding:1.5px 3px;
+    border-radius: 100px;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+    color: black;
+    text-align: center;
+}
