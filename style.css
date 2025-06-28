@@ -137,3 +137,24 @@ th,td{
         background-color:#50c878;
     }
 }
+@media (max-width:600px) {
+    body{
+        min-height: 150vh;
+    }
+    #focus {
+    position: absolute;
+    top:-6px;
+    left: 5px;
+    font-size:15px;
+    background-color: rgb(255, 255, 255);
+    height: 20px;
+    width: 65px;
+    padding:1.5px 3px;
+    border-radius: 100px;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+    color: black;
+    text-align: center;
+}
+}
