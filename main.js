@@ -55,7 +55,7 @@ let productsArray;
 if (localStorage.getItem('products')){
     productsArray=JSON.parse(localStorage.getItem('products'))
 }else{
-    productsArray={}
+    productsArray=[]
 }
 let createItem=function(){
     return function(){
@@ -70,8 +70,10 @@ let createItem=function(){
                 count:count.value,
                 category:category.value,
             }
+            console.log(details)
+            console.log(productsArray)
             productsArray.push(details);
-            localStorage.setItem('products',JSON.stringify(details));
+            localStorage.setItem('products',JSON.stringify(productsArray));
         }
     }
 }
