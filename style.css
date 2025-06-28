@@ -26,7 +26,7 @@ main{
 .full{
     width: 100%;
 }
-.deviceInfo,#total,#createButton{
+.deviceInfo,#total,#createButton,#searchButton,#searchTypeSection>button ,.delete,.upgrade{
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
@@ -81,4 +81,54 @@ main{
     z-index: 1000;
     color: black;
     text-align: center;
+}
+#searchButton{
+    background-color: #d8cfd0;
+    text-align: center;
+}
+#searchTypeSection{
+    display: flex;
+    justify-content:space-between;
+}
+#searchTypeSection>button{
+    /* margin: 0 50px; */
+    background-color: #fe6f20;
+    width:250px;
+    color: #14213d;
+    transition: all 0.4s ease ;
+    &:hover{
+        letter-spacing: 2px;
+    }
+}
+#deleteAll{
+    margin:30px 0 10px;
+    &:hover{
+        letter-spacing: 6px;
+    }
+}
+.delete{
+    background-color: #93032e;
+    transition: all 0.3s ease;
+    &:hover{
+        letter-spacing: 2px;
+        background-color: rgb(255, 0, 0);
+    }
+}
+footer{
+    width: 80%;
+    margin: 0 auto;
+}
+table{
+    width: 100%;
+}
+th,td{
+    padding: 5px;
+    text-align: center;
+}
+.upgrade{
+    transition: all 0.3s ease;
+    &:hover{
+        letter-spacing: 3px;
+        background-color:#50c878;
+    }
 }

@@ -19,7 +19,7 @@
         <p>System products management</p>
     </header>
     <main>
-        <section>
+        <section id="createSection">
             <p id="focus"></p>
             <div class="inputWrap full">
                 <input type="text" id="title" class="deviceInfo full" placeholder="Title">
@@ -40,14 +40,41 @@
                 <div id="total"></div>
             </div>
             <div class="inputWrap full">
-                <input type="number" id="count" class="deviceInfo full" placeholder="Count">
+                <input type="text" id="category" class="deviceInfo full" placeholder="Category">
             </div>
             <div class="inputWrap full">
-                <input type="text" id="category" class="deviceInfo full" placeholder="Category">
+                <input type="number" id="count" class="deviceInfo full" placeholder="Count">
             </div>
             <button id="createButton"class="full">Create</button>
         </section>
+        <hr color="#d8cfd0">
+        <section id="searchSection">
+            <input type="text" id="searchButton" class="full" placeholder="Search">
+            <div id="searchTypeSection">
+                <button id="searchByTitle">Search By Title</button>
+                <button id="searchByCategory">Search By Category</button>
+            </div>
+        </section>
     </main>
+    <footer>
+        <button id="deleteAll" class="delete full">Delete All</button>
+        <table>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Taxes</th>
+            <th>ADS</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>Category</th>
+            <th>Upgrade</th>
+            <th>Delete</th>
+            <th>DeleteALL</th>
+            <tbody id="tbody">
+                <tr></tr>
+            </tbody>
+        </table>
+    </footer>
     <script src="main.js"></script>
 </body>
 </html>
