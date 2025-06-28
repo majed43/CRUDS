@@ -12,6 +12,9 @@ let deviceInfo=document.getElementsByClassName('deviceInfo');
 let priceInputs=document.getElementsByClassName('price');
 let deleteAllButton=document.getElementById('deleteAll');
 let tbody=document.getElementById('tbody');
+let searchByTitleButton=document.getElementById('searchByTitle');
+let searchByCategoryButton=document.getElementById('searchByCategory');
+let searchBar=document.getElementById('searchBar');
 // light on/off input function
 let lightOn=function(){
     return function(){
@@ -199,6 +202,46 @@ let upgradeItem=function(){
         }
     }
 }
+// search selected method function
+let searchMethod=function(){
+    return function(){
+        if (this.innerHTML=="Search By Title"){
+            this.classList.add('searchSelectedMethod');
+            if(this.nextElementSibling.classList.contains('searchSelectedMethod')){
+                this.nextElementSibling.classList.remove('searchSelectedMethod');
+            }
+        }
+        if (this.innerHTML=="Search By Category"){
+            this.classList.add('searchSelectedMethod');
+            if(this.previousElementSibling.classList.contains('searchSelectedMethod')){
+                this.previousElementSibling.classList.remove('searchSelectedMethod');
+            }
+        }
+    }
+}
+// search function
+let search=function(){
+    return function(){
+        let shift=0;
+        if (searchByTitleButton.classList.contains('searchSelectedMethod')){
+            shift+=1;
+        }else if(searchByCategoryButton.classList.contains('searchSelectedMethod')){
+            shift+=7;
+        }
+        let tr=document.getElementsByTagName('tr');
+        let filter=searchBar.value.toLowerCase();
+        for (let i=1;i<tr.length;i++){
+            let row=tr[i];
+            let cube=row.getElementsByTagName('td')[shift];
+            let cubeContent=cube.textContent.toLowerCase();
+            if(cubeContent.includes(filter)){
+                row.style.display=''
+            }else{
+                row.style.display='none'
+            }
+        }
+    }
+}
 // activation
 onload=showItem()
 createButton.addEventListener('click',createItem());
@@ -207,3 +250,6 @@ createButton.addEventListener('click',cleanInputs());
 createButton.addEventListener('click',totalCount())
 deleteAllButton.addEventListener('click',deleteAll());
 deleteAllButton.addEventListener('click',showItem());
+searchByTitleButton.addEventListener('click',searchMethod());
+searchByCategory.addEventListener('click',searchMethod());
+searchBar.addEventListener('keyup',search())
