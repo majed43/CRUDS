@@ -1,0 +1,107 @@
+#createOpenCreteSection{
+    background-color: blueviolet;
+    outline: none;
+    width: 100%;
+    height:3rem;
+    border-radius: 5px;
+    color: white;
+}
+#total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(220, 53, 69);
+    border-radius: 5px;
+    &::before{
+        content:'Total:';
+    }
+    &::after{
+        content: '$';
+    }
+}
+.buttonSearchMethod{
+    transition: all 0.4s ease;
+    border: none;
+    &:hover{
+        background-color: rgb(189, 254, 47);
+        letter-spacing: 1px;
+    }
+}
+.buttonSelectedSearchMethod{
+    background-color: rgb(0, 255, 0);
+    letter-spacing: 1px;
+    border: none;
+}
+#deleteAllButton:hover{
+    transition: all 0.5s ease;
+    letter-spacing: 4px;
+}
+#cardsSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    border: 2px green;
+}
+.totalShowDetails{
+    background-color: rgb(101, 101, 246);
+    color: black;
+    border-radius:10px ;
+}
+.unitsLeftShow{
+    background-color: gainsboro;
+}
+.upgradeButton{
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    &:hover{
+        background-color: chartreuse;
+        border: none;
+    }
+}
+.sellButton{
+    background-color: forestgreen;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    border: none;
+    &:hover{
+        background-color: chartreuse;
+        border: none;
+    }
+}
+.deleteItemButton{
+    background-color:rgb(220, 53, 69);
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    border: none;
+    &:hover{
+        background-color: rgb(168, 19, 49);
+        border: none;
+    }
+}
+@media (max-width:480px) {
+    .upgradeButton{
+        font-size:small;
+    }
+}
+@media (max-width:768px) {
+    #total{
+        flex-direction: column;
+    }
+    .buttonSearchMethod>button{
+        border: none;
+        font-size: smaller;
+        transition: all 0.4s ease;
+        &:hover{
+            letter-spacing: 1px;
+            background-color: chartreuse;
+        }
+    }
+}
+@media (min-width:768px){
+    .card{
+        font-size: x-small;
+    }
+}

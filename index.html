@@ -4,77 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUDS</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type ="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/imgs/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/imgs/apple-touch-icon.png">
+    <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <header>
+
+<body class='bg-dark text-light'>
+    <header class="text-center pt-5 pb-3 bg-primary mb-3">
         <h1>CRUDS PROJECT</h1>
         <p>System products management</p>
     </header>
-    <main>
-        <section id="createSection">
-            <p id="focus"></p>
-            <div class="inputWrap full">
-                <input type="text" id="title" class="deviceInfo full" placeholder="Title">
-            </div>
-            <div class="priceInputs full">
-                <div class="inputWrap">
-                    <input type="number" id="price" class="deviceInfo price" placeholder="Price">
+    <main class="container">
+        <button id="createOpenCreteSection" data-bs-toggle="collapse" data-bs-target="#productDetails">Click here to
+            Create Item</button>
+        <section id="productDetails" class="collapse">
+            <!-- title -->
+            <input id='title' type="text" class="form-control  my-1" placeholder="Title">
+            <!-- price section -->
+            <section class="row w-100 justify-content-center">
+                <div class="col-10">
+                    <div class="row justify-content-center">
+                        <div class=" col-5 col-md-3 p-md-0 p-0 m-1">
+                            <input id='price' type="number" class="priceInputs form-control w-100" placeholder="Price">
+                        </div>
+                        <div class="col-5 col-md-3 p-0 m-1">
+                            <input id="taxes" type="number" class="priceInputs form-control " placeholder="Taxes">
+                        </div>
+                        <div class="col-5 col-md-3 p-0 m-1">
+                            <input id="ads" type="number" class="priceInputs form-control " placeholder="ADS">
+                        </div>
+                        <div class="col-5 col-md-2 p-0 m-1">
+                            <input id="discount" type="number" class="priceInputs form-control" placeholder="Discount">
+                        </div>
+                    </div>
                 </div>
-                <div class="inputWrap">
-                    <input type="number" id="taxes" class="deviceInfo price" placeholder="Taxes">
-                </div>
-                <div class="inputWrap">
-                    <input type="number" id="ads" class="deviceInfo price" placeholder="ADS">
-                </div>
-                <div class="inputWrap">
-                    <input type="number" id="discount" class="deviceInfo price" placeholder="Discount">
-                </div>
-                <div id="total"></div>
-            </div>
-            <div class="inputWrap full">
-                <input type="text" id="category" class="deviceInfo full" placeholder="Category">
-            </div>
-            <div class="inputWrap full">
-                <input type="number" id="count" class="deviceInfo full" placeholder="Count">
-            </div>
-            <button id="createButton"class="full">Create</button>
+                <div id='total' class="col-2 my-1 "></div>
+            </section>
+            <!-- count & category -->
+            <input id="category" type="text" class="form-control m-y1" placeholder="Category">
+            <input id="count" type="number" class="form-control my-1" placeholder="Count">
+            <button id='createButton' class="btn btn-success my-1 d-block w-100">Create</button>
         </section>
-        <hr color="#d8cfd0">
+        <section id="createAlertSection"></section>
         <section id="searchSection">
-            <input type="text" id="searchBar" class="full" placeholder="Search">
-            <div id="searchTypeSection">
-                <button id="searchByTitle" class="searchTypeButton">Search By Title</button>
-                <button id="searchByCategory"  class="searchTypeButton">Search By Category</button>
+            <input id="searchBar" type="text" class="form-control text-center mt-2 mb-1" placeholder="Search">
+            <div class=" justify-content-between row">
+                <button  id='searchByTitle' class="buttonSearchMethod btn btn-warning col-5 ms-3">Search By Title</button>
+                <button id="searchByCategory" class="buttonSearchMethod btn btn-warning col-5 me-3">Search by Category</button>
             </div>
         </section>
     </main>
-    <footer>
-        <button id="deleteAll" class="delete full">Delete All</button>
-        <table>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Taxes</th>
-            <th>ADS</th>
-            <th>Discount</th>
-            <th>Total</th>
-            <th>Category</th>
-            <th>Upgrade</th>
-            <th>Delete</th>
-            <th>DeleteALL</th>
-            <tbody id="tbody">
-                <tr></tr>
-            </tbody>
-        </table>
+    <footer class="container">
+        <button id="deleteAllButton" class="btn btn-danger w-100 my-2 ">Delete All Items</button>
+        <div id="deleteAlertSection"></div>
+        <section  id='cardSection' class=" row"></section>
     </footer>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
